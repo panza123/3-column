@@ -1,0 +1,29 @@
+@media (max-width: 700px) {
+  body {
+    width: 100vw;
+    height: auto;
+  }
+
+  @mixin borderRadius($topLeft, $topRight, $bottomLeft, $bottomRight) {
+    border-top-left-radius: $topLeft;
+    border-top-right-radius: $topRight;
+    border-bottom-left-radius: $bottomLeft;
+    border-bottom-right-radius: $bottomRight;
+  }
+
+  #content {
+    display: grid;
+    grid-template-columns: 300px;
+    margin: 20px;
+    color: $white;
+    #part1 {
+      @include borderRadius(10px, 10px, 0, 0);
+    }
+    #part2 {
+      border-radius: 0;
+    }
+    #part3 {
+      @include borderRadius(0, 0, 10px, 10px);
+    }
+  }
+}
